@@ -1,0 +1,338 @@
+/**
+    Multiplication Quiz Game
+    Code and Designed by: Aamir Khan Jadoon
+    Date: 15 - 8 - 2019
+
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|Ubuntu&display=swap');
+
+.container {
+    display: flex;
+    height: 25rem;
+    /*400px*/
+    width: 44rem;
+    /*704px*/
+    border: 1px solid gray;
+    margin: 20px auto 0px auto;
+    padding: 0px;
+    box-shadow: -2px -1px 5px rgba(128, 128, 128, 0.6);
+    border-radius: 0.25rem;
+
+}
+
+.sub-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Left Section of Container */
+
+.left-section {
+    display: flex;
+    justify-content: center;
+    flex-basis: 50rem;
+    margin: 10px;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    border-radius: 4px;
+    box-shadow: -2px -1px 5px rgba(128, 128, 128, 0.6);
+    background-color: #f6edcf;
+    font-size: 5rem;
+    font-family: 'Share Tech Mono',
+        monospace;
+
+
+
+}
+
+.instruction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 6px 0px 6px 0px;
+    border-radius: 4px;
+    box-shadow: -2px -1px 5px rgba(128, 128, 128, 0.6);
+    background-color: #f0dab1;
+    font-family: 'Ubuntu',
+        sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+
+
+
+}
+
+.option {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.option>div {
+    display: flex;
+    flex-basis: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -1px 5px rgba(128, 128, 128, 0.6);
+    background-color: rgb(0, 0, 0, 0.01);
+    color: #21aba5;
+    font-weight: 600;
+    border: solid 1px #163a5f;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    font-family: 'Share Tech Mono',
+        monospace;
+    letter-spacing: 1px;
+
+}
+
+.option>div:hover {
+    color: white;
+    font-weight: 600;
+    border: 0px solid;
+    background-color: #163a5f;
+    cursor: pointer;
+
+}
+
+/* Right Section of Container */
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20.25rem;
+    margin: 10px;
+    padding: 20px;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    box-shadow: -4px -2px 10px rgba(128, 128, 128, 0.6);
+    -moz-box-shadow: -4px -2px 10px rgba(128, 128, 128, 0.6);
+    -webkit-box-shadow: -4px -2px 10px rgba(128, 128, 128, 0.6);
+    -o-box-shadow: 10px -4px -2px 10px rgba(128, 128, 128, 0.6);
+    border-radius: 100px;
+    background-color: #222831;
+    color: white;
+    font-size: 3.5rem;
+
+}
+
+.seconds {
+    margin-top: -12px;
+}
+
+.remaining-time,
+.current-score-notification,
+.seconds {
+
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+    word-spacing: 4px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 130px;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 0.25rem;
+    box-shadow: -4px -2px 10px rgba(128, 128, 128, 0.6);
+    background-color: #222831;
+    color: white;
+    font-size: 2rem;
+
+}
+
+.reset-button {
+    background-color: rgb(0, 0, 0, 0.01);
+    margin-top: 20px;
+    color: rgb(21, 128, 216);
+    font-weight: 600;
+    padding: 4px 8px 4px 8px;
+    border: solid 1px rgba(66, 153, 225);
+    border-radius: 0.25rem;
+}
+
+.reset-button:hover {
+    background-color: #4299E1;
+    color: white;
+    cursor: pointer;
+
+}
+
+.start-button {
+    background-color: rgb(0, 0, 0, 0.01);
+    margin-top: 20px;
+    color: lightseagreen;
+    font-weight: 600;
+    padding: 4px 8px 4px 8px;
+    border: solid 1px rgb(0, 119, 113);
+    border-radius: 0.25rem;
+}
+
+.start-button:hover {
+    background-color: lightseagreen;
+    color: white;
+    cursor: pointer;
+
+}
+
+/*Game Ending Notification with Score*/
+.notification {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(77, 73, 73, 0.7);
+}
+
+.notification-text {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    left: 50%;
+    top: 10%;
+    margin-left: -200px;
+    background-color: white;
+}
+
+.bounceUpDown {
+    animation-name: bounceUpDown;
+    animation-duration: 0.5s;
+
+}
+
+@keyframes bounceUpDown {
+    0% {
+        top: 6%;
+    }
+
+    25% {
+        top: -2%;
+    }
+
+    50% {
+        top: 8%;
+    }
+
+    75% {
+        top: -2%;
+    }
+
+    100% {
+        top: 10%;
+    }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.icon {
+    display: flex;
+    height: 50px;
+    background-color: rgb(43, 108, 176);
+    justify-content: space-between;
+
+
+}
+
+.icon>img {
+    align-self: flex-start;
+    padding: 5px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.icon>img:hover {
+    background-color: #ff4040;
+    padding: 7px;
+}
+
+.icon>p {
+    align-self: flex-end;
+    font-size: 1.8rem;
+    color: white;
+    padding: 20px 20px 0px 10px;
+    letter-spacing: 3.5px;
+    word-spacing: 3px;
+    margin-bottom: 3px;
+}
+
+.notification-score-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(66, 153, 225);
+    flex-basis: 210px;
+}
+
+.notification-score-div>p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.notification-score {
+    font-family: 'Share Tech Mono',
+        monospace;
+}
+
+
+.notification-display-none {
+    display: none;
+}
+
+.wrong {
+    background-color: #eb7070 !important;
+    color: white !important;
+}
+
+.right {
+    background-color: #64e291 !important;
+    color: white !important;
+}
+
+.tryAgainSection {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-radius: 0.25rem;
+    background-color: #ffcfcf !important;
+    color: #f54b4b !important;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    font-weight: 500;
+}

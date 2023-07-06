@@ -2,6 +2,9 @@
     Multiplication Quiz Game
     Code and Designed by: Aamir Khan Jadoon
     Date: 15 - 8 - 2019
+
+    Modified by: Jairo Ochoa
+    Date: 05 - 07 - 2023
  */
 
 // Elements
@@ -20,7 +23,7 @@ let startButton = document.querySelector("button");
 let tryAgainSection = document.querySelector(".t");
 let firstNumber = 0;
 let secondNumber = 0;
-let time = 60;
+let time = 240;
 let scoreV = 0;
 let flagForOptions = 0;
 
@@ -45,7 +48,7 @@ function gameOver(close) {
   if (close == 2) {
     gameOverNotification.classList.add("notification-display-none");
     scoreV = 0;
-    time = 60;
+    time = 240;
     startGame();
   }
 }
@@ -111,26 +114,26 @@ function startTimer() {
 } // end of startTimer()
 
 startButton.addEventListener("click", () => {
-  if (startButton.textContent == "Start Game") {
-    startButton.textContent = "Reset Game";
+  if (startButton.textContent == "Iniciar Juego") {
+    startButton.textContent = "Reiniciar Juego";
     startButton.classList.remove("start-button");
     startButton.classList.add("reset-button");
     timer.classList.remove("notification-display-none");
     flag = 1;
     flagForOptions = 1;
-    time = 60;
+    time = 240;
     generateQuestion();
     tryAgainSection.classList.add("notification-display-none");
     tryAgainSection.classList.remove("tryAgainSection");
     startTimer();
-  } else if (startButton.textContent == "Reset Game") {
+  } else if (startButton.textContent == "Reiniciar Juego") {
     startGame();
   }
 });
 
 function startGame() {
   flagForOptions = 0;
-  startButton.textContent = "Start Game";
+  startButton.textContent = "Iniciar Juego";
   startButton.classList.remove("reset-button");
   startButton.classList.add("start-button");
   flag = 0;

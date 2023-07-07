@@ -20,8 +20,9 @@ let optionD = document.querySelector(".option-d");
 let timer = document.querySelector(".timer>p");
 let score = document.querySelector(".score");
 let startButton = document.querySelector("button");
+let optionsTableContainer = document.querySelector(".option-table");
 let tryAgainSection = document.querySelector(".t");
-let firstNumber = 0;
+let firstNumber = 1;
 let secondNumber = 0;
 let time = 240;
 let scoreV = 0;
@@ -64,7 +65,7 @@ function getRandomNumber() {
 
 // Generate a Random Question
 function generateQuestion() {
-  firstNumber = getRandomNumber();
+  // firstNumber = getRandomNumber();
   secondNumber = getRandomNumber();
   questionBox.textContent = firstNumber + " x " + secondNumber;
   generateOptions(firstNumber, secondNumber);
@@ -113,9 +114,22 @@ function startTimer() {
   }, 1000); // end of setInterval()
 } // end of startTimer()
 
+function selectTable(e, optionTable){
+  let childOptions = optionsTableContainer.children;
+  for (let i = 0; i < childOptions.length; i++) {
+    const element = childOptions[i];
+    if(element.classList.contains('active')){
+      element.classList.remove('active');
+    }
+  }
+  e.target.classList.add('active');
+  firstNumber = optionTable;
+  gameOver(2);
+}
+
 startButton.addEventListener("click", () => {
   if (startButton.textContent == "Iniciar Juego") {
-    startButton.textContent = "Reiniciar Juego";
+    startButton.textContent = "Terminar Juego";
     startButton.classList.remove("start-button");
     startButton.classList.add("reset-button");
     timer.classList.remove("notification-display-none");
@@ -126,7 +140,7 @@ startButton.addEventListener("click", () => {
     tryAgainSection.classList.add("notification-display-none");
     tryAgainSection.classList.remove("tryAgainSection");
     startTimer();
-  } else if (startButton.textContent == "Reiniciar Juego") {
+  } else if (startButton.textContent == "Terminar Juego") {
     startGame();
   }
 });

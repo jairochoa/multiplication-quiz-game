@@ -1,104 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom-style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/custom-style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!--Navbar-->
     <div class="bg-indigo-900 text-center py-4 lg:px-4">
-        <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
-            role="alert">
-            <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">¡Hazlo!</span>
-            <span class="font-semibold mr-2 text-left flex-auto">¡Samantha, eres muy inteligente!</span>
-            <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-            </svg>
-        </div>
+      <div
+        class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+        role="alert"
+      >
+        <span
+          class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3"
+          >¡Hazlo!</span
+        >
+        <span class="font-semibold mr-2 text-left flex-auto"
+          >¡Samantha, eres muy inteligente!</span
+        >
+        <svg
+          class="fill-current opacity-75 h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"
+          />
+        </svg>
+      </div>
     </div>
 
     <!--End Game Notification-->
     <div class="notification notification-display-none">
-        <div class="notification-text bounceUpDown">
-            <div class="main-content">
-                <div class="icon">
-                    <p>¡Se acabó el juego!</p>
-                    <img src="images/close.svg" alt="" width="27px">
-                </div>
-                <div class="notification-score-div">
-                    <p>Tu Puntuación es: <span class="notification-score">000</span></p>
-
-                </div>
-            </div>
+      <div class="notification-text bounceUpDown">
+        <div class="main-content">
+          <div class="icon">
+            <p>¡Se acabó el juego!</p>
+            <img src="images/close.svg" alt="" width="27px" />
+          </div>
+          <div class="notification-score-div">
+            <p>Tu Puntuación es: <span class="notification-score">000</span></p>
+          </div>
         </div>
+      </div>
     </div>
 
     <!--Main Container-->
     <div class="container">
-        <!--Left Section of Container-->
-        <div class="left-section">
+      <div class="table-options-subsection">
 
-            <!--Tryagain Section-->
-            <div class="t notification-display-none">
-                <p>¡Intenta otra vez!</p>
-            </div>
+        <!--Options subsection-->
+        <div class="option-table">
+          <!--Option 1-->
+          <div class="option-1 active" onclick="selectTable(event, 1)">1</div>
+          <!--Option 2-->
+          <div class="option-2" onclick="selectTable(event, 2)">2</div>
+          <!--Option 3-->
+          <div class="option-3" onclick="selectTable(event, 3)">3</div>
+          <!--Option 4-->
+          <div class="option-4" onclick="selectTable(event, 4)">4</div>
+          <!--Option 5-->
+          <div class="option-5" onclick="selectTable(event, 5)">5</div>
+          <!--Option 6-->
+          <div class="option-6" onclick="selectTable(event, 6)">6</div>
+          <!--Option 7-->
+          <div class="option-7" onclick="selectTable(event, 7)">7</div>
+          <!--Option 8-->
+          <div class="option-8" onclick="selectTable(event, 8)">8</div>
+          <!--Option 9-->
+          <div class="option-9" onclick="selectTable(event, 9)">9</div>
+          <!--Option 10-->
+          <div class="option-10" onclick="selectTable(event, 10)">10</div>
+        </div>
+      </div>
 
-            <!--question subsection-->
-            <div class="question">
-                <p>?</p>
-            </div>
-
-            <!--instruction subsection-->
-            <div class="instruction">
-                <p>Selecciona la opción correcta</p>
-            </div>
-
-            <!--Options subsection-->
-            <div class="option">
-                <!--Option A-->
-                <div class="option-a">A</div>
-                <!--Option B-->
-                <div class="option-b">B</div>
-                <!--Option C-->
-                <div class="option-c">C</div>
-                <!--Option D-->
-                <div class="option-d">D</div>
-            </div>
+      <!--Left Section of Container-->
+      <div class="left-section">
+        <!--Tryagain Section-->
+        <div class="t notification-display-none">
+          <p>¡Intenta otra vez!</p>
         </div>
 
-        <!--Left Section End-->
-
-        <!--Right Section of Container-->
-        <div class="right-section">
-
-            <!--timer subsection-->
-            <div class="timer">
-                <p class="notification-display-none">___</p>
-                <p class="seconds">Segundos</p>
-            </div>
-            <!--Remaining Time Notification-->
-            <p class="remaining-time">Tiempo Restante</p>
-
-            <!--Score-->
-            <div class="score">___</div>
-            <p class="current-score-notification">Puntuación</p>
-
-            <!--reset button-->
-            <button type="button" class="start-button">Iniciar Juego</button>
+        <!--question subsection-->
+        <div class="question">
+          <p>?</p>
         </div>
-        <!--Right Section End-->
+
+        <!--instruction subsection-->
+        <div class="instruction">
+          <p>Selecciona la opción correcta</p>
+        </div>
+
+        <!--Options subsection-->
+        <div class="option">
+          <!--Option A-->
+          <div class="option-a">A</div>
+          <!--Option B-->
+          <div class="option-b">B</div>
+          <!--Option C-->
+          <div class="option-c">C</div>
+          <!--Option D-->
+          <div class="option-d">D</div>
+        </div>
+      </div>
+
+      <!--Left Section End-->
+
+      <!--Right Section of Container-->
+      <div class="right-section">
+        <!--timer subsection-->
+        <div class="timer">
+          <p class="notification-display-none">___</p>
+          <p class="seconds">Segundos</p>
+        </div>
+        <!--Remaining Time Notification-->
+        <p class="remaining-time">Tiempo Restante</p>
+
+        <!--Score-->
+        <div class="score">___</div>
+        <p class="current-score-notification">Puntuación</p>
+
+        <!--reset button-->
+        <button type="button" class="start-button">Iniciar Juego</button>
+      </div>
+      <!--Right Section End-->
     </div>
     <!--Main Container End-->
 
     <script src="js/app.js"></script>
-</body>
-
-
+  </body>
 </html>

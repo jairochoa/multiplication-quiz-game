@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        audio{
+    display:none;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <audio id="audio">Testing</audio>
+<button onclick="play('./src/sounds/bell.mp3')">Play Sound 1</button>
+
+<button onclick="play('http://www.nielsharbo.dk/test/audioplayer/stepahead.mp3')">Play Sound 2</button>
+<br/>
+<button onclick="stopAudio()">Stop</button>
+
+
+
+
+    <script>
+function play(sound){
+        var audio = document.getElementById("audio");
+         audio.setAttribute('src', sound);
+        audio.play();
+     }
+     function stopAudio(){
+        var audio = document.getElementById("audio");
+        audio.pause();
+     }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+</head>
+<body>
+    <h1>Tabla de multiplicar</h1>
+    <div id='tabla-multiplicar'></div>
+
+    <!--Javascript-->
+
+    <script>
+
+        var numero = parseInt(prompt("Introduce un número: "));
+        
+        for(i = 1; i<=100; i++){
+            document.getElementById('tabla-multiplicar').innerHTML += `${numero} * ${i} = ${numero*i}<br>`;
+        }
+
+    </script>
+
+
+</body>
+</html>

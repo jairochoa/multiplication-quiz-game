@@ -24,7 +24,7 @@ let optionsTableContainer = document.querySelector(".option-table");
 let tryAgainSection = document.querySelector(".t");
 let firstNumber = 1;
 let secondNumber = 0;
-let time = 240;
+let time = 30;
 let scoreV = 0;
 let flagForOptions = 0;
 
@@ -49,7 +49,7 @@ function gameOver(close) {
   if (close == 2) {
     gameOverNotification.classList.add("notification-display-none");
     scoreV = 0;
-    time = 240;
+    time = 30;
     startGame();
   }
 }
@@ -127,6 +127,69 @@ function selectTable(e, optionTable){
   gameOver(2);
 }
 
+
+function play_pato(){
+  const audio = new Audio('./src/sounds/pato.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_perro(){
+  const audio = new Audio('./src/sounds/perro.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_vaca(){
+  const audio = new Audio('./src/sounds/vaca.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_caballo(){
+  const audio = new Audio('./src/sounds/caballo.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_oveja(){
+  const audio = new Audio('./src/sounds/oveja.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_pisco(){
+  const audio = new Audio('./src/sounds/pisco.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_gallina(){
+  const audio = new Audio('./src/sounds/gallina.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_gato(){
+  const audio = new Audio('./src/sounds/gato.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_cerdo(){
+  const audio = new Audio('./src/sounds/cerdo.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+function play_gallo(){
+  const audio = new Audio('./src/sounds/gallo.mp3')
+  audio.loop = false;  
+  audio.play();
+}
+
+
+
 startButton.addEventListener("click", () => {
   if (startButton.textContent == "Iniciar Juego") {
     startButton.textContent = "Terminar Juego";
@@ -135,7 +198,7 @@ startButton.addEventListener("click", () => {
     timer.classList.remove("notification-display-none");
     flag = 1;
     flagForOptions = 1;
-    time = 240;
+    time = 30;
     generateQuestion();
     tryAgainSection.classList.add("notification-display-none");
     tryAgainSection.classList.remove("tryAgainSection");

@@ -129,66 +129,76 @@ function selectTable(e, optionTable){
 
 
 function play_pato(){
-  const audio = new Audio('./src/sounds/pato.mp3')
+  const audio = new Audio('./src/sounds/pato.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_perro(){
-  const audio = new Audio('./src/sounds/perro.mp3')
+  const audio = new Audio('./src/sounds/perro.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_vaca(){
-  const audio = new Audio('./src/sounds/vaca.mp3')
+  const audio = new Audio('./src/sounds/vaca.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_caballo(){
-  const audio = new Audio('./src/sounds/caballo.mp3')
+  const audio = new Audio('./src/sounds/caballo.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_oveja(){
-  const audio = new Audio('./src/sounds/oveja.mp3')
+  const audio = new Audio('./src/sounds/oveja.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_pisco(){
-  const audio = new Audio('./src/sounds/pisco.mp3')
+  const audio = new Audio('./src/sounds/pisco.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_gallina(){
-  const audio = new Audio('./src/sounds/gallina.mp3')
+  const audio = new Audio('./src/sounds/gallina.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_gato(){
-  const audio = new Audio('./src/sounds/gato.mp3')
+  const audio = new Audio('./src/sounds/gato.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_cerdo(){
-  const audio = new Audio('./src/sounds/cerdo.mp3')
+  const audio = new Audio('./src/sounds/cerdo.mp3');
   audio.loop = false;  
   audio.play();
 }
 
 function play_gallo(){
-  const audio = new Audio('./src/sounds/gallo.mp3')
+  const audio = new Audio('./src/sounds/gallo.mp3');
   audio.loop = false;  
   audio.play();
 }
 
+function play_wha(){
+  const audio = new Audio('./src/sounds/wha.mp3');
+  audio.loop = false;  
+  audio.play();
+}
 
+function play_coin(){
+  const audio = new Audio('./src/sounds/coin.mp3');
+  audio.loop = false;  
+  audio.play();
+}
 
 startButton.addEventListener("click", () => {
   if (startButton.textContent == "Iniciar Juego") {
@@ -252,6 +262,7 @@ optionElement.addEventListener("click", e => {
     score.textContent = scoreV;
     tryAgainSection.classList.add("notification-display-none");
     tryAgainSection.classList.remove("tryAgainSection");
+    play_coin();
     generateQuestion();
   }
 
@@ -264,5 +275,6 @@ optionElement.addEventListener("click", e => {
     e.target.classList.add("wrong");
     tryAgainSection.classList.remove("notification-display-none");
     tryAgainSection.classList.add("tryAgainSection");
+    play_wha();
   }
 });
